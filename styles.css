@@ -1,0 +1,527 @@
+/* Reset some default styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+
+
+/* Header Section Styles */
+.navbar {
+    position: sticky;
+    justify-content: space-around;
+    min-height: 90px;
+    z-index: 999;
+    border-top: 4px solid #d32f2f;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.navbar-header{
+    justify-self: space-around !important;
+}
+
+
+.navbarNav{
+    flex: 1;
+}
+
+/* Navigation Links */
+.navbar-nav > li > a {
+    color: #003366;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    padding: 8px 12px;
+}
+
+.navbar-nav > li > a:before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #d32f2f;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+}
+
+.navbar-nav > li > a:hover {
+    color: #d32f2f;
+}
+
+.navbar-nav > li > a:hover:before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Right-side Icons */
+.navbar-icons img {
+    width: 50px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    padding: 5px;
+    box-sizing: content-box;
+}
+
+.navbar-icons img:hover {
+    transform: rotate(10deg) scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .navbar-nav > li > a {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-icons {
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-icons img {
+        width: 50px;
+    }
+}
+
+ /* Banner Section Styles */
+.banner {
+    position: relative;
+    padding: 10px 0;
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+}
+
+.banner-content {
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.banner-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-carousel {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    scroll-snap-type: x mandatory; /* Optional: Adds snapping */
+    width: 100%; /* Ensure enough width for scrolling */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 10px;
+    /* Remove transition here, as scrollBy() is used */
+}
+
+.carousel-item {
+    width: 100%; /* Matches button scroll amount */
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Scroll Button Styles */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+    .banner p {
+        font-size: 1rem;
+    }
+}
+
+  
+  /* Footer Styling */
+  .footer {
+    background-color: #004080;
+    color: white;
+    padding: 0px 0;
+    height: 40px;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+
+  .form-container {
+    background-color: #ffffff;
+    color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 50px;
+}
+.form-header {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.btn-primary {
+    background-color: #FFA726;
+    border: none;
+    width: 100%;
+}
+.captcha-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.captcha-container img {
+    width: 100px;
+    height: 40px;
+}
+  
+.tabs {
+    background-color: #003d7a;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+.tabs a {
+    color: #ffffff;
+    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    border-right: 1px solid #fff;
+}
+.tabs a:last-child {
+    border-right: none;
+}
+.tabs a.active {
+    background-color: #ffbf00;
+    color: #003d7a;
+}
+.content-box {
+    border: 1px solid #ffbf00;
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+.content-box h4 {
+    font-weight: bold;
+    color: #003d7a;
+}
+.content-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+.content-box ul li {
+    margin-bottom: 10px;
+}
+.content-box ul li:before {
+    content: "\21AA"; /* Unicode arrow character */
+    color: #003d7a;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* General container styling */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* SSN MBA Section */
+.container h2 {
+    color: #1d4dbd;
+    font-weight: bold;
+}
+
+.container p.lead {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.container .btn-primary {
+    background-color: #1d4dbd;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Program Highlights Section */
+
+#program-highlights h2 {
+    text-align: center;
+    color: #1d4dbd;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#program-highlights img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+#program-highlights p {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#program-highlights .row{
+    display: flex;
+    align-items: baseline;
+}
+
+/* Specializations Offered Section */
+#specializations h2 {
+    color: #1d4dbd;
+    margin-bottom: 30px;
+}
+
+#specializations .btn-default {
+    border: 2px solid #1d4dbd;
+    color: #1d4dbd;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+#specializations .btn-default:hover {
+    background-color: #1d4dbd;
+    color: #fff;
+}
+
+/* Additional spacing */
+.text-center {
+    text-align: center;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #program-highlights .col-sm-4, #specializations .col-sm-2 {
+        margin-bottom: 20px;
+    }
+    #specializations .col-sm-2 {
+        width: 100%;
+    }
+}
+
+/* FAQ section */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    position: relative;
+}
+
+.faq-item h3 {
+    cursor: pointer;
+    color: #007BFF;
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.faq-item h3:hover {
+    color: #0056b3;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+    line-height: 1.5;
+    padding-left: 20px;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.faq-answer.visible {
+    display: block;
+    max-height: 500px; /* Adjust as needed for larger answers */
+    opacity: 1;
+}
+
+.faq-item h3::before {
+    content: '+';
+    font-size: 1.2em;
+    color: #000000;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.faq-item h3.expanded::before {
+    content: '-';
+    transform: rotate(180deg);
+}
+
+.faq-item h3:hover::before {
+    color: #0056b3;
+}
+
+/* Model for downlaod brochures */
+
+.modal-header {
+    border-bottom: none;
+}
+
+.input-group-prepend{
+    width: 90px;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-content {
+    border-radius: 8px;
+    padding: 20px;
+}
+.modal-backdrop.show {
+    opacity: 0.9; /* Darken the overlay background */
+}
+.form-control:focus {
+    box-shadow: none;
+    border-color: red; /* Set focus border color to red as in the image */
+}
+.captcha {
+    display: flex;
+    align-items: center;
+}
+.captcha img {
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 4px;
+}
+.custom-checkbox label {
+    font-size: 0.9em;
+}
+.submit-btn {
+    background-color: #0056b3;
+    color: #fff;
+    font-weight: bold;
+}
+.submit-btn:hover {
+    background-color: #004494;
+}
+
+ /* Placements Section Styles */
+ .placements-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+/* Title Styling */
+.placements-title {
+    color: #0056b3; /* Blue color */
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Metrics Container Styling */
+.placements-metrics {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Individual Metric Styling */
+.metric {
+    text-align: center;
+}
+
+.metric .value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #9400d3; /* Purple color */
+}
+
+.metric .label {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Industry Focus Text Styling */
+.industry-focus {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0056b3;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    
+/* Individual Metric Styling */
+.metric {
+    width: 100%;
+}
+}

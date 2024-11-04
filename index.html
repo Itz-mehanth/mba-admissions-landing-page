@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBA Admissions - SSN University</title>
+  
+  <!-- Link Bootstrap CSS -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  
+  <!-- Link Bootstrap JS and jQuery (required for Bootstrap 3 JavaScript) -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts (Optional) -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+
+  <!-- Header Section -->
+<nav class="navbar navbar-default">
+        <!-- Logo and Toggle Button -->
+        <div class="navbar-header">
+            <div>
+                <a class="navbar-logo" href="#">
+                    <img alt="SSN Logo" src="images/logo.jpg" class="navbar-logo">
+                </a>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav navbar-right navbar-icons">
+                    <li><a href="#"><img alt="NAAC Logo" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/NAAC_LOGO.png?1713849016"></a></li>
+                    <li><a href="#"><img alt="AICTE Logo" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/AICTE%20logo.png?1713849016"></a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="#" class="nav-link">SSN MBA Program</a></li>
+                    <li><a href="#" class="nav-link">Program Highlights</a></li>
+                    <li><a href="#" class="nav-link">Program Offered</a></li>
+                    <li><a href="#" class="nav-link">Placements</a></li>
+                    <li><a href="#" class="nav-link">Admission Criteria</a></li>
+                    <li><a href="#" class="nav-link">Eligibility and Selection Process</a></li>
+                    <li><a href="#" class="nav-link">Contact Us</a></li>
+                    <li><a href="#" class="nav-link">SSNCE</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <button type="button" class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            
+
+        </div>
+
+</nav>
+
+  <!-- Banner Section -->
+  <section class="banner text-center">
+    <div class="banner-carousel-wrapper">
+        <button class="scroll-btn left-btn" onclick="scrollleft()">&#10094;</button>
+        <div class="banner-carousel">
+            <div class="carousel-track">
+                <div class="carousel-item"><img src="https://static.npfs.co/accounts/197/config/banner/Untitled design (6).jpg" alt="College Banner"></div>
+                <div class="carousel-item"><img src="https://static.npfs.co/accounts/197/config/banner/ssnimage245.jpg" alt="College Banner"></div>
+                <div class="carousel-item"><img src="https://static.npfs.co/accounts/197/config/banner/ssn image123.jpg" alt="College Banner"></div>
+                <div class="carousel-item"><img src="https://static.npfs.co/accounts/197/config/banner/Untitled design (3).jpg" alt="College Banner"></div>
+                <div class="carousel-item"><img src="https://static.npfs.co/accounts/197/config/banner/Untitled design (4).jpg" alt="College Banner"></div>
+            </div>
+        </div>
+        <button class="scroll-btn right-btn" onclick="scrollRight()">&#10095;</button>
+    </div>
+</section>
+
+
+  <div class="form-container">
+    <div class="form-header">MBA Admissions 2025</div>
+    
+    <!-- Registration Form -->
+    <form>
+        <!-- Name Field -->
+        <div class="form-group">
+            <label for="name">Enter Name *</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+        </div>
+        
+        <!-- Email Field -->
+        <div class="form-group">
+            <label for="email">Enter Email Address *</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email Address">
+        </div>
+        
+        <!-- Mobile Number Field -->
+        <div class="form-group">
+            <label for="mobile">Enter Mobile Number *</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <select class="form-control">
+                        <option>+91</option>
+                    </select>
+                </div>
+                <input type="text" class="form-control" id="mobile" placeholder="Please Enter a Valid Mobile Number">
+            </div>
+        </div>
+        
+        <!-- OTP Field -->
+        <div class="form-group">
+            <label for="otp">Enter OTP *</label>
+            <input type="text" class="form-control" id="otp" placeholder="Enter OTP">
+        </div>
+        
+        <!-- Password Field -->
+        <div class="form-group">
+            <label for="password">Any Password of Your Choice *</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter Password">
+        </div>
+        
+        <!-- State Selection Field -->
+        <div class="form-group">
+            <label for="state">Select State *</label>
+            <select class="form-control" id="state">
+                <option value="">Select State</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <!-- Add more states as needed -->
+            </select>
+        </div>
+        
+        <!-- Admission Test Selection Field -->
+        <div class="form-group">
+            <label for="admission-test">Select Admission Test *</label>
+            <select class="form-control" id="admission-test">
+                <option value="">Select Admission Test</option>
+                <option value="CAT">CAT</option>
+                <option value="MAT">MAT</option>
+                <option value="GMAT">GMAT</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        
+        <!-- CAPTCHA -->
+        <div class="form-group captcha-container">
+            <img src="captcha-placeholder.png" alt="Captcha">
+            <input type="text" class="form-control" placeholder="Enter text as shown">
+        </div>
+        
+        <!-- Agreement Checkbox -->
+        <div class="form-group">
+            <label>
+                <input type="checkbox" required> I agree to receive information regarding my registration by signing up on SSN *
+            </label>
+        </div>
+        
+        <!-- Register Button -->
+        <button type="submit" class="btn btn-primary">Register</button>
+        
+        <!-- Login Link -->
+        <p class="text-center" style="margin-top: 10px;">
+            <a href="#" style="color: #FFA726;">EXISTING USER? LOGIN</a>
+        </p>
+    </form>
+</div>
+
+<!-- SSN MBA Section -->
+<div id="ssn-mba" class="container text-center" style="margin-top: 30px;">
+
+   <!-- Trigger Button -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#brochureModal">
+        Download Brochure
+    </button>
+
+    <!-- Modal Structure -->
+    <div class="modal fade" id="brochureModal" tabindex="-1" role="dialog" aria-labelledby="brochureModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center w-100" id="brochureModalLabel">MBA ADMISSION 2025<br>DOWNLOAD BROCHURE</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Enter Name *</label>
+                            <input type="text" class="form-control" id="name" placeholder="Please Enter a Valid Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Enter Email Address *</label>
+                            <input type="email" class="form-control" id="email" placeholder="Please Enter a Valid Email Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Enter Mobile Number *</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <select class="form-control">
+                                        <option>+91</option>
+                                    </select>
+                                </div>
+                                <input type="text" class="form-control" id="mobile" placeholder="Please Enter a Valid Mobile Number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">Select State *</label>
+                            <select class="form-control" id="state">
+                                <option>Select a State</option>
+                                <!-- Add state options here -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Select City *</label>
+                            <select class="form-control" id="city">
+                                <option>Select a City</option>
+                                <!-- Add city options here -->
+                            </select>
+                        </div>
+                        <div class="form-group captcha">
+                            <img src="captcha-placeholder.png" alt="Captcha">
+                            <input type="text" class="form-control" placeholder="Enter text as shown">
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="checkbox1">
+                            <label for="checkbox1">I agree to receive information regarding my submitted enquiry via email, sms, whatsapp.</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="checkbox2" required>
+                            <label for="checkbox2">Please Check the Agreement Checkbox to proceed further!</label>
+                        </div>
+                        <button type="submit" class="btn submit-btn btn-block">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p>Know more about the MBA programme at SSN</p>
+    <p>A comprehensive guide encompassing all necessary aspects for your management learning journey.</p>
+    
+    <h2>SSN MBA</h2>
+    <p>Welcome to the 26th batch of MBA Program. The legacy and brand of SSN speaks for itself.</p>
+    <p>The MBA Program of SSN is for those aspiring students who are keen to build their managerial career. 
+        With specializations across all the functional areas of management, the program provides the depth of knowledge with contemporary relevance. 
+        The MBA program of SSN has wide acceptability by companies across different verticals of industry. 
+        The graduates from the school are most sought after by the companies due to their industry-ready orientation. 
+        If you wish to live your dream and stand tall, SSN is the place where you could nurture it. 
+        For more information about the program, please visit
+        <strong><a href="https://www.ssn.edu.in/" target="_blank">SSN School of Management, Chennai</a></strong>.
+    </p>
+</div>
+
+<!-- Program highlights-->
+<div class="container" id="program-highlights">
+    <h2>PROGRAM HIGHLIGHTS</h2>
+
+    <div class="row">
+        <div class="col-lg-12" style="text-align: center;">
+            <p class="heading_text">
+                SSN School of Management (SSN SoM) is part of Sri Sivasubramaniya Nadar College of Engineering (SSNCE). 
+                The institution is NAAC A+ accredited and autonomous under Anna University. MBA Program is accredited by NBA 
+                for three years with effect from 2023. The institution is part of 
+                <strong>Shiv Nadar Foundation,</strong> founded by Dr. Shiv Nadar, Chairman, HCL Technologies. The MBA program 
+                is one of the flagship programs at SSN.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-xs-12">
+            <div class="boxes">
+                <div class="img_box">
+                    <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/a.png?1730092424" alt="Industry Oriented">
+                </div>
+                <div class="text_box">
+                    <p class="text_pera">Industry oriented and hands-on exposure.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-12">
+            <div class="boxes">
+                <div class="img_box">
+                    <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/b.png?1730092424" alt="Merit Based Admissions">
+                </div>
+                <div class="text_box">
+                    <p class="text_pera">Merit based admissions based on all India admission tests - CAT/XAT/CMAT/MAT.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-12">
+            <div class="boxes">
+                <div class="img_box">
+                    <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/c.png?1730092424" alt="State-of-the-art Infrastructure">
+                </div>
+                <div class="text_box">
+                    <p class="text_pera">State-of-the-art infrastructure with residential facility.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-xs-12">
+            <div class="boxes boxes_2nd_row1">
+                <div class="img_box">
+                    <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/d.png?1730092424" alt="Holistic Development">
+                </div>
+                <div class="text_box">
+                    <p class="text_pera">Holistic development of student with academics and managerial personality attributes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-xs-12">
+            <div class="boxes boxes_2nd_row2">
+                <div class="img_box">
+                    <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/d.png?1730092424" alt="Specializations">
+                </div>
+                <div class="text_box">
+                    <p class="text_pera">Specializations in five areas of management with contemporary outlook.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Specializations Offered Section -->
+<div id="specializations" class="container text-center" style="margin-top: 50px; margin-bottom: 50px;">
+    <h2>SPECIALIZATIONS OFFERED</h2>
+    <div class="row">
+      <div class="col-sm-2 col-sm-offset-1">
+        <button class="btn btn-default">Marketing</button>
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-default">Operations</button>
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-default">Finance</button>
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-default">Business Analytics</button>
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-default">Human Resource</button>
+      </div>
+    </div>
+</div>
+
+<!-- Placements Section -->
+<div class="placements-section">
+    <div class="placements-title">PLACEMENTS</div>
+    <div class="placements-metrics">
+        <div class="metric">
+            <div class="value">95%</div>
+            <div class="label">Students Placed</div>
+        </div>
+        <div class="metric">
+            <div class="value">200+</div>
+            <div class="label">Employment Partners</div>
+        </div>
+        <div class="metric">
+            <div class="value">18 LPA</div>
+            <div class="label">Highest Salary Package</div>
+        </div>
+        <div class="metric">
+            <div class="value">7.2 LPA</div>
+            <div class="label">Average Salary</div>
+        </div>
+        <div class="metric">
+            <div class="value">6.8 LPA</div>
+            <div class="label">Median Salary</div>
+        </div>
+        <div class="metric">
+            <div class="value">8.2 LPA</div>
+            <div class="label">Top 50% CTC</div>
+        </div>
+    </div>
+    <div class="industry-focus">
+        INDUSTRY FOCUS: FMCG, IT, BANKING, FINTECH, SERVICES, E-COMMERCE, DIGITAL...
+    </div>
+</div>
+
+   <!-- Tabs Section -->
+<div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#eligibility">Eligibility & Admission Process</a></li>
+      <li><a data-toggle="tab" href="#scholarship">Scholarship</a></li>
+    </ul>
+  
+    <!-- Content Section -->
+    <div class="tab-content">
+      <!-- Eligibility & Admission Process Content -->
+      <div id="eligibility" class="tab-pane fade in active">
+        <div class="content-box">
+          <h4>Academic Eligibility</h4>
+          <ul>
+            <li>X, XII, UG &gt; 60%</li>
+            <li>No history of arrears in UG program. However, applicants with up to two history of arrears can apply for the program. The call for GD/PI in case of applicants with two history of arrears is at the discretion of the institution.</li>
+          </ul>
+  
+          <h4>Admission Test Eligibility</h4>
+          <ul>
+            <li>CAT/XAT/CMAT &gt; 60 percentile</li>
+            <li>MAT/ATMA &gt; 80 percentile</li>
+            <li>TANCET/ Other State Level Admission Tests &gt; 80 percentile</li>
+            <li>Applicants who have lower scores than above can apply to the program with existing test scores and can update the same application form with any other future dated admission tests. This application is valid till the admissions season is closed. This feature will help applicants to earn an opportunity for GD/PI.</li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Scholarship Content -->
+      <div id="scholarship" class="tab-pane fade">
+        <div class="content-box">
+          <h4>Scholarship Opportunities</h4>
+          <ul>
+            <li>Merit Scholarship</li>
+            <li>Merit-based Means Scholarship</li>
+            <li>Sports</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+<section class="faq-section">
+    <h2>Frequently Asked Questions (FAQs)</h2>
+
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">What specializations are available in the MBA program at SSN?</h3>
+        <p class="faq-answer">MBA Program at SSN is a dual specialization program. The student has a choice from five specializations: Marketing, Finance, Human Resources, Operations & Supply Chain, and Business Analytics.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">What are the admission requirements for the MBA program?</h3>
+        <p class="faq-answer">A consistent academic record with good percentiles in CAT/XAT/CMAT/MAT will qualify you for a call for GD/PI.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">Is there a work experience requirement for MBA applicants?</h3>
+        <p class="faq-answer">Work experience of over 24 months will add value to your learning, but it is not mandatory. Around 75-80% of the batch consists of fresh graduates.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">Are there opportunities for internships during the MBA program?</h3>
+        <p class="faq-answer">The companies are keen to offer internships before considering students for roles. The institution provides opportunities that align with student expectations.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">What is the tuition fee for the MBA program, and are there financial aid options?</h3>
+        <p class="faq-answer">The MBA program costs approximately Rs. 6.5 lacs (inclusive of single room hostel stay). Banks support graduates through merit-based admissions.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">How does SSN support MBA students in career placement?</h3>
+        <p class="faq-answer">A full-fledged career development center provides career support 24/7. SSN’s MBA program includes structured career training aligned with job descriptions on campus.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">What networking opportunities are available for MBA students?</h3>
+        <p class="faq-answer">SSN has strong industry connections, with over 100 companies engaging with graduates, and a network of 2000+ alumni to support career development.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">Can I pursue the MBA program on a part-time basis?</h3>
+        <p class="faq-answer">The MBA program at SSN is a full-time, mandatory residential program.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">What is the application deadline for the MBA program?</h3>
+        <p class="faq-answer">The admission window is generally December 2024 - April 2025. Applicants are encouraged to apply early and update test scores as results are released.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">Is Business Analytics available as a specialization in the MBA program?</h3>
+        <p class="faq-answer">Yes, it’s available. However, Business Analytics is focused on decision-making within functional areas, distinct from Data Science roles.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">How current is the MBA curriculum at your institution?</h3>
+        <p class="faq-answer">SSN’s MBA program incorporates industry-relevant courses with a strong digital focus, such as digital advertising and CRM.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">Are professionals from industry involved in teaching MBA courses?</h3>
+        <p class="faq-answer">About one-third of the MBA courses are taught by industry managers, with 50% of specialization courses in the third semester led by industry professionals.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">What methods can I use to assess the return on investment (ROI) of the MBA program?</h3>
+        <p class="faq-answer">The program fee is Rs. 6.5 lacs, with an average salary of Rs. 7.3 LPA, achieving ROI in under 12 months.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">Is the MBA program residential?</h3>
+        <p class="faq-answer">Yes, it’s a mandatory residential program, providing an excellent environment for peer learning and engagement.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">What accommodations are provided for MBA students in the hostel?</h3>
+        <p class="faq-answer">Each student has a single occupancy room with an option to upgrade to an AC room for an additional cost.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">Which University awards the MBA degree in SSN?</h3>
+        <p class="faq-answer">SSN MBA is autonomous under Anna University, and the degree is awarded by Anna University.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">What are the good attributes of MBA graduates that SSN produces?</h3>
+        <p class="faq-answer">SSN graduates are contemporary, well-rounded, and well-prepared for managerial roles.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">Can I study as a day scholar if I am from Chennai?</h3>
+        <p class="faq-answer">All students are required to stay in the hostel.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">What is the duration of the internship window in MBA?</h3>
+        <p class="faq-answer">The program includes an 8-week summer internship and a 12-week project internship.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">When will I get a call for GD/PI?</h3>
+        <p class="faq-answer">Generally, within 10-15 days after applying for the program.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">What can I do if I do not get a call for GD/PI?</h3>
+        <p class="faq-answer">If you don’t get a call, consider retaking admission tests and updating your application to improve your chances.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">How is SSN linked to Shiv Nadar Foundation (SNF)?</h3>
+        <p class="faq-answer">SSN is a part of SNF, which has invested $1.5 billion in education through Dr. Shiv Nadar’s contributions.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">How does informal learning happen in the MBA program?</h3>
+        <p class="faq-answer">Informal learning happens through clubs, events, and participation in MMA and NHRD activities.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">Why does SSN give preference to all India admission tests like CAT/XAT/CMAT?</h3>
+        <p class="faq-answer">A high score in national tests indicates a strong managerial career aspiration, which is crucial for learning and career success.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">Is Marketing a largely preferred specialization in MBA?</h3>
+        <p class="faq-answer">Yes, Marketing is highly popular due to numerous job opportunities, with 80% of graduates choosing this specialization.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3 onclick="toggleAnswer(this)">Are typical MBA jobs target-oriented?</h3>
+        <p class="faq-answer">MBA graduates are target-oriented as they work in decision-making roles across various functions such as marketing, finance, HR, operations, and supply chain.</p>
+    </div>
+    
+
+</section>
+
+ <!-- Footer Section -->
+<section class="text-center" style="background-color: #003399; color: #ffffff; padding: 20px;">
+    <div class="container">
+        <div class="row">
+            <!-- Admissions Coordinator, Email, Social Media, and Information Link -->
+            <div class="col-md-6">
+                <!-- Admissions Coordinator Information -->
+                <p>
+                    <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+                    <strong> Admissions Coordinator:</strong> Ms. Sridevi, +91 73388 45104 or +91 44 27469700 ext: 560 or 255 or 340
+                </p>
+    
+                <!-- Email Information -->
+                <p>
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    <strong> Email id:</strong> 
+                    <a href="mailto:mba.admissions@ssn.edu.in" style="color: #ffffff;">mba.admissions@ssn.edu.in</a>
+                </p>
+    
+                <!-- Social Media Links -->
+                <p>
+                    <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+                    <strong> Follow us on LinkedIn at:</strong> 
+                    <a href="https://www.linkedin.com/school/ssn-school-of-management" style="color: #ffffff;">SSN School of Management: Posts | LinkedIn</a>
+                </p>
+    
+                <!-- Information Link -->
+                <p>
+                    For more information about SSN School of Management, please visit 
+                    <a href="https://www.ssn.edu.in" style="color: #ffcc00; font-weight: bold;">School of Management – SSN Institutions</a>
+                </p>
+            </div>
+    
+            <!-- Campus Office Address in a separate column -->
+            <div class="col-md-6">
+                <p>
+                    <strong>Campus Office</strong><br>
+                    SSN School of Management<br>
+                    Old Mahabalipuram Road<br>
+                    Kalavakkam (Off Chennai)<br>
+                    Chengalpattu DT 603 110
+                </p>
+            </div>
+        </div>
+    </div>    
+</section>
+
+<footer>
+    <div class="page-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-right">
+                        <a href="https://www.meritto.com/" target="_blank">
+                            <img src="/images/merittoblackPoweredby.png" alt="Meritto formerly NoPaperForms" width="120">
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </div>
+</footer>
+
+
+  <!-- Bootstrap 3 JavaScript and jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--Js file-->
+  <script src="main.js" defer></script>
+</body>
+</html>
