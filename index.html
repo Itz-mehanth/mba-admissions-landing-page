@@ -25,65 +25,97 @@
 <body>
 
   <!-- Header Section -->
-<nav class="navbar navbar-default">
+<nav class="navbar" id="header">
         <!-- Logo and Toggle Button -->
         <div class="navbar-header">
-            <div>
+            <div class="navbar-top">
                 <a class="navbar-logo" href="#">
                     <img alt="SSN Logo" src="images/logo.jpg" class="navbar-logo">
                 </a>
-            </div>
-            
-            <!-- Navigation Links -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+
                 <ul class="nav navbar-nav navbar-right navbar-icons">
                     <li><a href="#"><img alt="NAAC Logo" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/NAAC_LOGO.png?1713849016"></a></li>
                     <li><a href="#"><img alt="AICTE Logo" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/AICTE%20logo.png?1713849016"></a></li>
                 </ul>
-                <ul class="nav navbar-nav">
-                    <li><a href="#" class="nav-link">SSN MBA Program</a></li>
-                    <li><a href="#" class="nav-link">Program Highlights</a></li>
-                    <li><a href="#" class="nav-link">Program Offered</a></li>
-                    <li><a href="#" class="nav-link">Placements</a></li>
-                    <li><a href="#" class="nav-link">Admission Criteria</a></li>
-                    <li><a href="#" class="nav-link">Eligibility and Selection Process</a></li>
-                    <li><a href="#" class="nav-link">Contact Us</a></li>
-                    <li><a href="#" class="nav-link">SSNCE</a></li>
-                </ul>
-            </div>
-
-            <div>
+                
                 <button type="button" class="navbar-toggle">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
             </div>
-            
 
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav">
+                    <li><a href="#MBA" class="nav-link coolBeans">SSN MBA Program</a></li>
+                    <li><a href="#program_highlights" class="nav-link coolBeans">Program Highlights</a></li>
+                    <li><a href="#specilizations_offered" class="nav-link coolBeans">Program Offered</a></li>
+                    <li><a href="#placements" class="nav-link coolBeans">Placements</a></li>
+                    <li><a href="#admission_process" class="nav-link coolBeans">Admission Criteria</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="#eligibility_and_selection_process" class="nav-link coolBeans">Eligibility and Selection Process</a></li>
+                    <li><a href="#FAQ" class="nav-link coolBeans">FAQ</a></li>
+                    <li><a href="#contact" class="nav-link coolBeans">Contact Us</a></li>
+                    <li><a href="https://www.ssn.edu.in/" class="nav-link coolBeans">SSNCE</a></li>
+                </ul>
+            </div>
         </div>
 
 </nav>
 
   <!-- Banner Section -->
-  <section class="banner text-center">
-    <div class="banner-carousel-wrapper">
-        <button class="scroll-btn left-btn" onclick="scrollleft()">&#10094;</button>
+  <section class="banner text-center" id="banner">
         <div class="banner-carousel">
-            <div class="carousel-track">
-                <div class="carousel-item"><img src="https://static.npfs.co/accounts/197/config/banner/Untitled design (6).jpg" alt="College Banner"></div>
-                <div class="carousel-item"><img src="https://static.npfs.co/accounts/197/config/banner/ssnimage245.jpg" alt="College Banner"></div>
-                <div class="carousel-item"><img src="https://static.npfs.co/accounts/197/config/banner/ssn image123.jpg" alt="College Banner"></div>
-                <div class="carousel-item"><img src="https://static.npfs.co/accounts/197/config/banner/Untitled design (3).jpg" alt="College Banner"></div>
-                <div class="carousel-item"><img src="https://static.npfs.co/accounts/197/config/banner/Untitled design (4).jpg" alt="College Banner"></div>
-            </div>
         </div>
-        <button class="scroll-btn right-btn" onclick="scrollRight()">&#10095;</button>
-    </div>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+            
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://static.npfs.co/accounts/197/config/banner/Untitled design (6).jpg" alt="College Banner">
+                </div>
+                
+                <div class="item">
+                    <img src="https://static.npfs.co/accounts/197/config/banner/ssnimage245.jpg" alt="College Banner">
+                </div>
+                
+                <div class="item">
+                    <img src="https://static.npfs.co/accounts/197/config/banner/Untitled design (3).jpg" alt="College Banner">
+                </div>
+                
+                <div class="item">
+                    <img src="https://static.npfs.co/accounts/197/config/banner/Untitled design (4).jpg" alt="College Banner">
+                </div>
+                
+                <div class="item">
+                    <img src="https://static.npfs.co/accounts/197/config/banner/ssn image123.jpg" alt="College Banner">
+              </div>
+            </div>
+          
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
 </section>
 
 
-  <div class="form-container">
+  <div class="form-container" id="register-form">
     <div class="form-header">MBA Admissions 2025</div>
     
     <!-- Registration Form -->
@@ -172,78 +204,80 @@
     </form>
 </div>
 
+<!-- Modal Structure -->
+<div class="modal fade" id="brochureModal" tabindex="-1" role="dialog" aria-labelledby="brochureModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center w-100" id="brochureModalLabel">MBA ADMISSION 2025<br>DOWNLOAD BROCHURE</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Enter Name *</label>
+                        <input type="text" class="form-control" id="name" placeholder="Please Enter a Valid Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Enter Email Address *</label>
+                        <input type="email" class="form-control" id="email" placeholder="Please Enter a Valid Email Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Enter Mobile Number *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <select class="form-control">
+                                    <option>+91</option>
+                                </select>
+                            </div>
+                            <input type="text" class="form-control" id="mobile" placeholder="Please Enter a Valid Mobile Number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">Select State *</label>
+                        <select class="form-control" id="state">
+                            <option>Select a State</option>
+                            <!-- Add state options here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Select City *</label>
+                        <select class="form-control" id="city">
+                            <option>Select a City</option>
+                            <!-- Add city options here -->
+                        </select>
+                    </div>
+                    <div class="form-group captcha">
+                        <img src="captcha-placeholder.png" alt="Captcha">
+                        <input type="text" class="form-control" placeholder="Enter text as shown">
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="checkbox1">
+                        <label for="checkbox1">I agree to receive information regarding my submitted enquiry via email, sms, whatsapp.</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="checkbox2" required>
+                        <label for="checkbox2">Please Check the Agreement Checkbox to proceed further!</label>
+                    </div>
+                    <button type="submit" class="btn submit-btn btn-block">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- SSN MBA Section -->
-<div id="ssn-mba" class="container text-center" style="margin-top: 30px;">
+<div id="MBA" class="container text-center slideUpFastEaseOut" style="margin-top: 30px;">
 
    <!-- Trigger Button -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#brochureModal">
         Download Brochure
     </button>
 
-    <!-- Modal Structure -->
-    <div class="modal fade" id="brochureModal" tabindex="-1" role="dialog" aria-labelledby="brochureModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-center w-100" id="brochureModalLabel">MBA ADMISSION 2025<br>DOWNLOAD BROCHURE</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Enter Name *</label>
-                            <input type="text" class="form-control" id="name" placeholder="Please Enter a Valid Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Enter Email Address *</label>
-                            <input type="email" class="form-control" id="email" placeholder="Please Enter a Valid Email Address">
-                        </div>
-                        <div class="form-group">
-                            <label for="mobile">Enter Mobile Number *</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <select class="form-control">
-                                        <option>+91</option>
-                                    </select>
-                                </div>
-                                <input type="text" class="form-control" id="mobile" placeholder="Please Enter a Valid Mobile Number">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="state">Select State *</label>
-                            <select class="form-control" id="state">
-                                <option>Select a State</option>
-                                <!-- Add state options here -->
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="city">Select City *</label>
-                            <select class="form-control" id="city">
-                                <option>Select a City</option>
-                                <!-- Add city options here -->
-                            </select>
-                        </div>
-                        <div class="form-group captcha">
-                            <img src="captcha-placeholder.png" alt="Captcha">
-                            <input type="text" class="form-control" placeholder="Enter text as shown">
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox" id="checkbox1">
-                            <label for="checkbox1">I agree to receive information regarding my submitted enquiry via email, sms, whatsapp.</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox" id="checkbox2" required>
-                            <label for="checkbox2">Please Check the Agreement Checkbox to proceed further!</label>
-                        </div>
-                        <button type="submit" class="btn submit-btn btn-block">SUBMIT</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
     <p>Know more about the MBA programme at SSN</p>
     <p>A comprehensive guide encompassing all necessary aspects for your management learning journey.</p>
     
@@ -259,8 +293,8 @@
     </p>
 </div>
 
-<!-- Program highlights-->
-<div class="container" id="program-highlights">
+<!-- Program highlights -->
+<div class="container slideUpFastEaseOut" id="program_highlights">
     <h2>PROGRAM HIGHLIGHTS</h2>
 
     <div class="row">
@@ -274,121 +308,285 @@
             </p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-4 col-xs-12">
-            <div class="boxes">
-                <div class="img_box">
-                    <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/a.png?1730092424" alt="Industry Oriented">
-                </div>
-                <div class="text_box">
-                    <p class="text_pera">Industry oriented and hands-on exposure.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-xs-12">
-            <div class="boxes">
-                <div class="img_box">
-                    <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/b.png?1730092424" alt="Merit Based Admissions">
-                </div>
-                <div class="text_box">
-                    <p class="text_pera">Merit based admissions based on all India admission tests - CAT/XAT/CMAT/MAT.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-xs-12">
-            <div class="boxes">
-                <div class="img_box">
-                    <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/c.png?1730092424" alt="State-of-the-art Infrastructure">
-                </div>
-                <div class="text_box">
-                    <p class="text_pera">State-of-the-art infrastructure with residential facility.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6 col-xs-12">
-            <div class="boxes boxes_2nd_row1">
-                <div class="img_box">
-                    <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/d.png?1730092424" alt="Holistic Development">
-                </div>
-                <div class="text_box">
-                    <p class="text_pera">Holistic development of student with academics and managerial personality attributes.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-xs-12">
-            <div class="boxes boxes_2nd_row2">
-                <div class="img_box">
-                    <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/d.png?1730092424" alt="Specializations">
-                </div>
-                <div class="text_box">
-                    <p class="text_pera">Specializations in five areas of management with contemporary outlook.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
+    <!-- First row of highlights -->
+    <div class="container" id="program_highlights">
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-xs-12">
+                <div class="boxes">
+                    <div class="card">
+                        <div class="front">
+                            <!-- Front view content -->
+                            <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/a.png" alt="Industry Oriented">
+                            <p>Industry oriented and hands-on exposure.</p>
+                        </div>
+                        <div class="back">
+                            <!-- Back view content or design -->
+                            <p>Our program includes workshops, internships, and real-world projects to provide practical experience and industry relevance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-xs-12">
+                <div class="boxes">
+                    <div class="card">
+                        <div class="front">
+                            <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/b.png" alt="Merit Based Admissions">
+                            <p>Merit based admissions based on all India admission tests - CAT/XAT/CMAT/MAT.</p>
+                        </div>
+                        <div class="back">
+                            <p>Admissions are purely merit-based, ensuring a diverse and talented group of students from across the country.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-xs-12">
+                <div class="boxes">
+                    <div class="card">
+                        <div class="front">
+                            <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/c.png" alt="State-of-the-art Infrastructure">
+                            <p>State-of-the-art infrastructure with residential facility.</p>
+                        </div>
+                        <div class="back">
+                            <p>Our campus features modern facilities, research labs, and residential accommodations for an enriched learning environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <!-- Card 4 -->
+            <div class="col-lg-6 col-xs-12">
+                <div class="boxes">
+                    <div class="card">
+                        <div class="front">
+                            <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/d.png" alt="Holistic Development">
+                            <p>Holistic development of student with academics and managerial personality attributes.</p>
+                        </div>
+                        <div class="back">
+                            <p>Our program emphasizes holistic growth, including leadership, communication, and teamwork skills alongside academics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Card 5 -->
+            <div class="col-lg-6 col-xs-12">
+                <div class="boxes">
+                    <div class="card">
+                        <div class="front">
+                            <img src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/d.png" alt="Specializations">
+                            <p>Specializations in five areas of management with contemporary outlook.</p>
+                        </div>
+                        <div class="back">
+                            <p>We offer five management specializations designed to meet current industry demands and prepare students for career success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
 
 <!-- Specializations Offered Section -->
-<div id="specializations" class="container text-center" style="margin-top: 50px; margin-bottom: 50px;">
+<section id="specilizations_offered" class="container text-center">
     <h2>SPECIALIZATIONS OFFERED</h2>
-    <div class="row">
-      <div class="col-sm-2 col-sm-offset-1">
-        <button class="btn btn-default">Marketing</button>
-      </div>
-      <div class="col-sm-2">
-        <button class="btn btn-default">Operations</button>
-      </div>
-      <div class="col-sm-2">
-        <button class="btn btn-default">Finance</button>
-      </div>
-      <div class="col-sm-2">
-        <button class="btn btn-default">Business Analytics</button>
-      </div>
-      <div class="col-sm-2">
-        <button class="btn btn-default">Human Resource</button>
-      </div>
+    <div class="card-container">
+        <div class="specializations">
+            <h3>Marketing</h3>
+        </div>
+        <div class="specializations">
+            <h3>Operations</h3>
+        </div>
+        <div class="specializations">
+            <h3>Finance</h3>
+        </div>
+        <div class="specializations">
+            <h3>Business Analytics</h3>
+        </div>
+        <div class="specializations">
+            <h3>Human Resource</h3>
+        </div>
     </div>
-</div>
+</section>
+
 
 <!-- Placements Section -->
-<div class="placements-section">
+<div class="placements" id="placements">
     <div class="placements-title">PLACEMENTS</div>
     <div class="placements-metrics">
+        <!-- Circle Progress with Loading Bars and Graph -->
         <div class="metric">
-            <div class="value">95%</div>
+            <div class="loading-circle">
+                <svg class="circle-svg" viewBox="0 0 100 100">
+                    <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="circle-progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <div class="value counter" data-target="95" data-suffix="%" data-decimal="false">95%</div>
+            </div>
+            <div class="bar-container">
+                <div class="loading-bar" style="--percent: 95;"></div>
+            </div>
             <div class="label">Students Placed</div>
         </div>
+
+        <!-- Repeat for other metrics -->
         <div class="metric">
-            <div class="value">200+</div>
-            <div class="label">Employment Partners</div>
+            <div class="loading-circle">
+                <svg class="circle-svg" viewBox="0 0 100 100">
+                    <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="circle-progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <div class="value counter" data-target="200" data-suffix="+" data-decimal="false">200+</div>
+            </div>
+            <div class="bar-container">
+                <div class="loading-bar" style="--percent: 100;"></div>
+            </div>
+            <div class="label">Employment</div>
+            <div class="label">Partners</div>
         </div>
+
         <div class="metric">
-            <div class="value">18 LPA</div>
-            <div class="label">Highest Salary Package</div>
+            <div class="loading-circle">
+                <svg class="circle-svg" viewBox="0 0 100 100">
+                    <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="circle-progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <div class="value counter" data-target="18" data-suffix=" LPA" data-decimal="false">18 LPA</div>
+            </div>
+            <div class="bar-container">
+                <div class="loading-bar" style="--percent: 100;"></div>
+            </div>
+            <div class="label">Highest Salary</div>
+            <div class="label">Package</div>
         </div>
+
         <div class="metric">
-            <div class="value">7.2 LPA</div>
+            <div class="loading-circle">
+                <svg class="circle-svg" viewBox="0 0 100 100">
+                    <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="circle-progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <div class="value counter" data-target="7.2" data-suffix=" LPA" data-decimal="true">7.2 LPA</div>
+            </div>
+            <div class="bar-container">
+                <div class="loading-bar" style="--percent: 100;"></div>
+            </div>
             <div class="label">Average Salary</div>
         </div>
+
         <div class="metric">
-            <div class="value">6.8 LPA</div>
+            <div class="loading-circle">
+                <svg class="circle-svg" viewBox="0 0 100 100">
+                    <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="circle-progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <div class="value counter" data-target="6.8" data-suffix=" LPA" data-decimal="true">6.8 LPA</div>
+            </div>
+            <div class="bar-container">
+                <div class="loading-bar" style="--percent: 100;"></div>
+            </div>
             <div class="label">Median Salary</div>
         </div>
+
         <div class="metric">
-            <div class="value">8.2 LPA</div>
+            <div class="loading-circle">
+                <svg class="circle-svg" viewBox="0 0 100 100">
+                    <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="circle-progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <div class="value counter" data-target="8.2" data-suffix=" LPA" data-decimal="true">8.2 LPA</div>
+            </div>
+            <div class="bar-container">
+                <div class="loading-bar" style="--percent: 100;"></div>
+            </div>
             <div class="label">Top 50% CTC</div>
         </div>
     </div>
-    <div class="industry-focus">
-        INDUSTRY FOCUS: FMCG, IT, BANKING, FINTECH, SERVICES, E-COMMERCE, DIGITAL...
-    </div>
+    <!-- <div class="graph-container">
+        <canvas id="progressGraph"></canvas>
+    </div> -->
 </div>
 
+
+<section class="recruiters" id="recruiters">
+    <h1 class="heading">Prominent Recruiters</h1>
+    <div class="container">
+
+        <!-- Row scrolling to the left -->
+        <div class="carousel-row scroll-left">
+            <div class="carousel-item"><img alt="HCL" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/HCL.png"></div>
+            <div class="carousel-item"><img style="background-color: #000000; height: 50px; padding: 10px;" alt="Howden" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/howden-logo.png"></div>
+            <div class="carousel-item"><img alt="Kaar Tech" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Kaar%20tech.jpeg"></div>
+            <div class="carousel-item"><img alt="Kantar" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Kantar.png"></div>
+            <div class="carousel-item"><img alt="Khimji Ramdas" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Khimji%20ramdas.png"></div>
+            <div class="carousel-item"><img alt="Naukri" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/naukri_Logo.png"></div>
+            <div class="carousel-item"><img alt="Pfizer" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Pfizer.png"></div>
+            <div class="carousel-item"><img alt="Sagent" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Sagent.png"></div>
+            <div class="carousel-item"><img alt="TCS" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/TCS.png"></div>
+            <div class="carousel-item"><img alt="Vi" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Vi.png"></div>
+        </div>
+        
+        <!-- Row scrolling to the right -->
+        <div class="carousel-row scroll-right">
+            <div class="carousel-item"><img alt="Acurus" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/acurus-logo.png"></div>
+            <div class="carousel-item"><img alt="Beroe Inc" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Beroe%20Inc.png"></div>
+            <div class="carousel-item"><img alt="Blackstone Shipping" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Blackstone%20shipping.png"></div>
+            <div class="carousel-item"><img alt="CBRE" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/CBRE.png"></div>
+            <div class="carousel-item"><img alt="CCD" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/CCD.png"></div>
+            <div class="carousel-item"><img alt="Cognizant" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Cognizant.jpeg"></div>
+            <div class="carousel-item"><img alt="Consulting and Beyond" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Consulting%20and%20Beyond.png"></div>
+            <div class="carousel-item"><img alt="Daimler" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Daimler.png"></div>
+            <div class="carousel-item"><img alt="Deloitte" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Deloitte.png"></div>
+            <div class="carousel-item"><img alt="Federal Bank" src="https://cdn.npfs.co/uploads/template/197/5714/publish/images/Placements/Federal%20bank.png"></div>
+        </div>
+    </div>
+</section>
+
+<section id="admission_process" class="slideUpFastEaseout">
+    <div class="admission-process">
+        <h2>Admission Process</h2>
+        <div class="steps-container">
+            <div class="progress-line"></div> <!-- Vertical progress line -->
+            <div class="step slide-in slide-in-right">
+                <div class="icon">&#x1F4DD;</div>
+                <h3>Step 1</h3>
+                <p>Register yourself</p>
+            </div>
+            <div class="step slide-in slide-in-left">
+                <div class="icon">&#x1F4F1;</div>
+                <h3>Step 2</h3>
+                <p>Verify via Email/OTP</p>
+            </div>
+            <div class="step slide-in slide-in-right">
+                <div class="icon">&#x1F4DD;</div>
+                <h3>Step 3</h3>
+                <p>Fill application form Online</p>
+            </div>
+            <div class="step slide-in slide-in-left">
+                <div class="icon">&#x1F4C4;</div>
+                <h3>Step 4</h3>
+                <p>Upload required Documents</p>
+            </div>
+            <div class="step slide-in slide-in-right">
+                <div class="icon">&#x1F4B3;</div>
+                <h3>Step 5</h3>
+                <p>Pay application fee</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
    <!-- Tabs Section -->
-<div class="container">
+<div class="container slideUpFastEaseOut" id="eligibility_and_selection_process">
     <ul class="nav nav-tabs">
       <li class="active"><a data-toggle="tab" href="#eligibility">Eligibility & Admission Process</a></li>
       <li><a data-toggle="tab" href="#scholarship">Scholarship</a></li>
@@ -430,7 +628,7 @@
   </div>
 
   <!-- FAQ Section -->
-<section class="faq-section">
+<section class="FAQ slideUpFastEaseOut" id="FAQ">
     <h2>Frequently Asked Questions (FAQs)</h2>
 
     <div class="faq-item">
@@ -567,7 +765,7 @@
 </section>
 
  <!-- Footer Section -->
-<section class="text-center" style="background-color: #003399; color: #ffffff; padding: 20px;">
+<section id="contact" class="text-center" style="background-color: #003399; color: #ffffff; padding: 20px;">
     <div class="container">
         <div class="row">
             <!-- Admissions Coordinator, Email, Social Media, and Information Link -->
@@ -613,7 +811,7 @@
     </div>    
 </section>
 
-<footer>
+<footer id="footer">
     <div class="page-row">
             <div class="container">
                 <div class="row">

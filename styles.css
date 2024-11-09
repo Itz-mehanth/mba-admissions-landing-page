@@ -6,24 +6,42 @@ body {
 
 
 /* Header Section Styles */
-.navbar {
+.navbar-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.navbar{
+    width: 100%;
+    padding: 0 15px;
     position: sticky;
-    justify-content: space-around;
-    min-height: 90px;
+    top: 0;
     z-index: 999;
-    border-top: 4px solid #d32f2f;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    background-color: white;
 }
 
-.navbar-header{
-    justify-self: space-around !important;
+.navbar-top {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
-
-.navbarNav{
+.navbarNav {
     flex: 1;
+}
+
+#navbarNav {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    
 }
 
 /* Navigation Links */
@@ -33,30 +51,9 @@ body {
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
     padding: 8px 12px;
-}
-
-.navbar-nav > li > a:before {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #d32f2f;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    transform-origin: right;
-}
-
-.navbar-nav > li > a:hover {
-    color: #d32f2f;
-}
-
-.navbar-nav > li > a:hover:before {
-    transform: scaleX(1);
-    transform-origin: left;
+    display: inline-block;
 }
 
 /* Right-side Icons */
@@ -72,14 +69,56 @@ body {
     filter: brightness(1.2);
 }
 
+.navbar-icons {
+    display: flex;
+}
+
+/* Mobile Collapse Styles */
+#navbarNav {
+    display: none; /* Hide by default */
+}
+
+#navbarNav.show {
+    display: flex; /* Show when toggled */
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style for the Navbar Toggle Icon */
+.navbar-toggle {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
+    .navbar{
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
     .navbar-nav > li > a {
         font-size: 0.95rem;
     }
 }
 
 @media (max-width: 992px) {
+    
+    .navbar{
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
     .navbar-icons {
         margin-top: 10px;
         text-align: center;
@@ -87,18 +126,103 @@ body {
 }
 
 @media (max-width: 576px) {
+    .navbar{
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
     .navbar-icons img {
         width: 50px;
     }
 }
 
- /* Banner Section Styles */
+/* Recuiters section */
+
+.recruiters {
+    text-align: center;
+    padding: 40px 0;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.recruiters .container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.recruiters h1.heading {
+    color: #1d4dbd;
+    font-weight: bold;
+}
+
+.scroll-left .carousel-item {
+    display: inline-block;
+    flex-shrink: 0;
+    animation: scrollLeft 25s linear infinite;
+}
+
+.scroll-right .carousel-item {
+    display: inline-block;
+    flex-shrink: 0;
+    animation: scrollRight 25s linear infinite;
+}
+
+/* Grid layout for each row */
+.carousel-row {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    width: 100%;
+    padding: 20px 0;
+    justify-items: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    width: 200px;
+    height: auto;
+    max-width: 250px;
+    object-fit: contain;
+}
+
+/* Scroll to the left */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+/* Scroll to the right */
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+/* Hover effect to pause scrolling */
+.carousel-item:hover {
+    transform: scale(1.5);
+}
+
+
+ /* Banner Section */
 .banner {
     position: relative;
     padding: 10px 0;
     background-color: #ffffff;
     color: #333;
     text-align: center;
+}
+
+.carousel{
+    background-color: #ffffff;
 }
 
 .banner-content {
@@ -113,6 +237,15 @@ body {
     justify-content: center;
 }
 
+.glyphicon,
+.sr-only,
+.banner,
+.carousel-control,
+.carousel-inner,
+.banner-carousel {
+    background: none; /* Removes any background color */
+}
+
 .banner-carousel {
     overflow: hidden;
     white-space: nowrap;
@@ -121,51 +254,18 @@ body {
     width: 100%; /* Ensure enough width for scrolling */
 }
 
-.carousel-track {
-    display: flex;
-    gap: 10px;
-    /* Remove transition here, as scrollBy() is used */
-}
-
-.carousel-item {
-    width: 100%; /* Matches button scroll amount */
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-}
-
-
-.carousel-item img {
+.carousel-inner{
     width: 100%;
-    height: auto;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-inner img {
+    width: 1366px;   /* Ensure the image fills the container */
+    height: 540px;  /* Ensure image takes full height */
+    object-fit: cover; /* Ensure aspect ratio is maintained */
     border-radius: 8px;
-}
-
-/* Scroll Button Styles */
-.scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 2;
-    transition: background-color 0.3s;
-}
-
-.scroll-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.left-btn {
-    left: 10px;
-}
-
-.right-btn {
-    right: 10px;
 }
 
 /* Responsive Adjustments */
@@ -177,7 +277,6 @@ body {
         font-size: 1rem;
     }
 }
-
   
   /* Footer Styling */
   .footer {
@@ -292,76 +391,185 @@ body {
 }
 
 /* Program Highlights Section */
-
-#program-highlights h2 {
+/* Container and Section Styling */
+#program_highlights {
     text-align: center;
-    color: #1d4dbd;
-    font-weight: bold;
-    margin-bottom: 30px;
+    padding: 2rem;
 }
 
-#program-highlights img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
+#program_highlights h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
 }
 
-#program-highlights p {
-    color: #333;
-    font-size: 14px;
-    line-height: 1.6;
+.modal {
+    z-index: 1050 !important;  /* Set the modal's z-index higher than the backdrop */
 }
 
-#program-highlights .row{
+.modal-backdrop {
+    z-index: 1040 !important;  /* Set the backdrop's z-index lower than the modal */
+}
+
+
+
+/* Card Flip Effect */
+.boxes {
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+
+.card:hover, .card.rotate {
+    transform: rotateY(0); /* Show front view when hovered or in view */
+}
+
+/* Front and Back Side Styling */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     display: flex;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 
-/* Specializations Offered Section */
-#specializations h2 {
-    color: #1d4dbd;
-    margin-bottom: 30px;
+.front {
+    background: #f5f5f5;
+    transform: rotateY(0deg); /* Show on flip */
 }
 
-#specializations .btn-default {
-    border: 2px solid #1d4dbd;
-    color: #1d4dbd;
-    font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    margin: 10px;
+.back {
+    background: #007bff;
+    color: white;
+    transform: rotateY(180deg); /* Initially hidden */
 }
 
-#specializations .btn-default:hover {
-    background-color: #1d4dbd;
-    color: #fff;
+/* Image and Text Styling */
+.front img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
 }
 
-/* Additional spacing */
-.text-center {
+.front p, .back p {
+    font-size: 1rem;
     text-align: center;
+    padding: 0 0.5rem;
 }
 
-.row {
-    margin-top: 20px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #program-highlights .col-sm-4, #specializations .col-sm-2 {
-        margin-bottom: 20px;
+/* Rotate Animation Triggering */
+@keyframes rotateAnimation {
+    from {
+        opacity: 0;
+        transform: rotateY(180deg);
     }
-    #specializations .col-sm-2 {
-        width: 100%;
+    to {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+}
+
+.rotate {
+    animation: rotateAnimation 0.6s ease forwards;
+}
+
+/* Existing In-View Animation */
+@keyframes inViewAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Specializations Section */
+#specilizations_offered {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+    padding-top: 40px; /* Adds space to accommodate the heading */
+}
+
+/* Ensure Heading is Fixed at the Top */
+#specilizations_offered h2 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10; /* Makes sure the heading is above the cards */
+    font-size: 2rem; /* Adjust heading size */
+    color: #333;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* Specialization Cards Container */
+.card-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+/* Specialization Cards */
+.specializations {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 0 20px 0;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: transform 1.5s ease, opacity 1.5s ease;
+    min-width: 200px;
+    width: 300px; /* Adjust card width */
+    height: 100px;
+}
+
+
+/* Active Card - When Entering the View */
+.specializations.active {
+    position: relative;
+    transform: translateZ(0); /* Bring card closer to the screen */
+    opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #specilizations_offered {
+        padding: 10px;
+    }
+    .specializations {
+        min-width: 150px;
     }
 }
 
 /* FAQ section */
-.faq-section {
+.FAQ{
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 10px;
     background-color: #ffffff;
 }
 
@@ -422,7 +630,6 @@ body {
 }
 
 /* Model for downlaod brochures */
-
 .modal-header {
     border-bottom: none;
 }
@@ -469,59 +676,292 @@ body {
     background-color: #004494;
 }
 
- /* Placements Section Styles */
- .placements-section {
+/* Placements Section Styles */
+.placements {
     text-align: center;
-    padding: 40px 20px;
-    background-color: #f9f9f9;
+    padding: 60px 20px;
+    background-color: #ffffff;
     font-family: Arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Title Styling */
 .placements-title {
-    color: #0056b3; /* Blue color */
-    font-size: 28px;
+    color: #0056b3;
+    font-size: 32px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-/* Metrics Container Styling */
+/* Metrics Container */
 .placements-metrics {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
 /* Individual Metric Styling */
 .metric {
     text-align: center;
+    position: relative;
+    width: 150px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    word-wrap: break-word; /* Allow text to wrap */
+    word-break: break-word; /* Break long words if necessary */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.metric .value {
-    font-size: 36px;
-    font-weight: bold;
-    color: #9400d3; /* Purple color */
+.metric:hover {
+    transform: translateY(-10px);
 }
 
-.metric .label {
-    font-size: 14px;
-    color: #555;
+/* Loading Circle Styling */
+.loading-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
 }
 
-/* Industry Focus Text Styling */
-.industry-focus {
-    font-size: 16px;
+.circle-svg {
+    width: 100px;
+    height: 100px;
+    transform: rotate(-90deg);
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #e6e6e6;
+    stroke-width: 10;
+}
+
+.circle-progress {
+    fill: none;
+    stroke: #007bff;
+    stroke-width: 10;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 1.5s ease;
+}
+
+/* Percentage Value Styling */
+.value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
     font-weight: bold;
     color: #0056b3;
-    margin-top: 20px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    
-/* Individual Metric Styling */
-.metric {
-    width: 100%;
+/* Upward-Facing Loading Bar */
+.bar-container {
+    position: relative;
+    height: 100px;
+    width: 20px;
+    background: #e6e6e6;
+    border-radius: 10px;
+    margin: 20px auto;
+    overflow: hidden;
 }
+
+.loading-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: #007bff;
+    border-radius: 10px;
+    transition: height 1.5s ease;
+}
+
+.loading-bar[data-visible="true"] {
+    height: calc(var(--percent) * 1%);
+}
+
+/* Label Styling */
+.label {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    text-align: center; /* Centers the text */
+    word-wrap: break-word; /* Allow the label text to break and wrap */
+    word-break: break-word; /* Force breaking of long words */
+}
+
+/* Graph Container Styling */
+.graph-container {
+    margin-top: 60px;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Graph Styling */
+canvas {
+    width: 100%;
+    height: 250px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* admission process */
+.admission-process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.steps-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    /* width: 100vh; */
+    overflow: visible;  /* Allow children to overflow */
+}
+
+.progress-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 0; /* Start with zero height */
+    background-color: #007bff;
+    transition: height 1s ease; /* Smooth transition for growth */
+    z-index: -1; /* To keep it behind steps */
+}
+
+.step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background: #ffffff; /* Light background */
+    padding: 2rem 1.5rem;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Limit maximum width */
+    margin: 0 auto; /* Center container */
+    border: 2px solid #e0e0e0; /* Soft border for a polished look */
+}
+
+/* Alternate step positions */
+.step:nth-child(odd) {
+    align-items: flex-end;
+    text-align: right;
+    padding-right: 1rem;
+    margin-right: -50%;
+    position: relative;  /* Added position relative to allow transformations */
+}
+
+.step:nth-child(even) {
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 1rem;
+    margin-left: -50%;
+    position: relative;  /* Added position relative to allow transformations */
+}
+
+.step .icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+/* Base class for the animation */
+.slide-in {
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 0.6s ease-out;
+}
+
+/* Slide in from left */
+.slide-in-left {
+    transform: translateX(-100%); /* Starts off-screen to the left */
+}
+
+/* Slide in from right */
+.slide-in-right {
+    transform: translateX(100%); /* Starts off-screen to the right */
+}
+
+/* When the animation class is added, it brings the element to its original position */
+.slide-in-active {
+    transform: translateX(0); /* Reset position */
+    opacity: 1; /* Fully visible */
+}
+
+/*==============================pop effect===========================================*/
+.pop{
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.pop:hover {
+    transform: scale(1.05); /* Slightly enlarge the element */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow for more emphasis */
+}
+
+/*==============================hover effect===========================================*/
+.coolBeans {
+    color: #18272F;
+    position: relative;
+    text-decoration: none;
+}
+
+.coolBeans::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.coolBeans:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+/*==============================Enter effect===========================================*/
+/* Keyframes for the animation */
+@keyframes slideUpEaseOut {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    80% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply this to elements initially to hide them */
+.slideUpFastEaseOut {
+    opacity: 0; /* Hidden initially */
+    /* Removed transition as it's redundant with keyframe animation */
+}
+
+/* Trigger animation when in view */
+.in-view {
+    opacity: 1;
+    animation: slideUpEaseOut 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
