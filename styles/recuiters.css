@@ -1,0 +1,75 @@
+
+/* Recuiters section */
+
+.recruiters {
+    text-align: center;
+    padding: 40px 0;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.recruiters .container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.recruiters h1.heading {
+    color: #1d4dbd;
+    font-weight: bold;
+}
+
+.scroll-left .carousel-item {
+    display: inline-block;
+    flex-shrink: 0;
+    animation: scrollLeft 25s linear infinite;
+}
+
+.scroll-right .carousel-item {
+    display: inline-block;
+    flex-shrink: 0;
+    animation: scrollRight 25s linear infinite;
+}
+
+/* Grid layout for each row */
+.carousel-row {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    width: 100%;
+    padding: 20px 0;
+    justify-items: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    width: 150px;
+    height: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+/* Scroll to the left */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+/* Scroll to the right */
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+/* Hover effect to pause scrolling */
+.carousel-item:hover {
+    transform: scale(1.5);
+}

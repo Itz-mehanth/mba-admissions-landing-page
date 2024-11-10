@@ -15,6 +15,7 @@ body {
 
 }
 
+
 .navbar{
     width: 100%;
     padding: 0 15px;
@@ -43,6 +44,13 @@ body {
     align-items: center;
     
 }
+
+.navbar-logo{
+    height: 100px;
+    width: 180px;
+    object-fit: contain; /* Ensures aspect ratio if image size differs */
+}
+
 
 /* Navigation Links */
 .navbar-nav > li > a {
@@ -136,81 +144,6 @@ body {
     }
 }
 
-/* Recuiters section */
-
-.recruiters {
-    text-align: center;
-    padding: 40px 0;
-    width: 100vw;
-    overflow: hidden;
-}
-
-.recruiters .container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.recruiters h1.heading {
-    color: #1d4dbd;
-    font-weight: bold;
-}
-
-.scroll-left .carousel-item {
-    display: inline-block;
-    flex-shrink: 0;
-    animation: scrollLeft 25s linear infinite;
-}
-
-.scroll-right .carousel-item {
-    display: inline-block;
-    flex-shrink: 0;
-    animation: scrollRight 25s linear infinite;
-}
-
-/* Grid layout for each row */
-.carousel-row {
-    display: flex;
-    flex-direction: row;
-    gap: 100px;
-    width: 100%;
-    padding: 20px 0;
-    justify-items: center;
-    align-items: center;
-}
-
-.carousel-item img {
-    width: 200px;
-    height: auto;
-    max-width: 250px;
-    object-fit: contain;
-}
-
-/* Scroll to the left */
-@keyframes scrollLeft {
-    0% {
-        transform: translateX(100vw);
-    }
-    100% {
-        transform: translateX(-100vw);
-    }
-}
-
-/* Scroll to the right */
-@keyframes scrollRight {
-    0% {
-        transform: translateX(-100vw);
-    }
-    100% {
-        transform: translateX(100vw);
-    }
-}
-
-/* Hover effect to pause scrolling */
-.carousel-item:hover {
-    transform: scale(1.5);
-}
-
 
  /* Banner Section */
 .banner {
@@ -266,6 +199,8 @@ body {
     height: 540px;  /* Ensure image takes full height */
     object-fit: cover; /* Ensure aspect ratio is maintained */
     border-radius: 8px;
+    max-width: 100%; /* Ensures it doesn't exceed screen width */
+
 }
 
 /* Responsive Adjustments */
@@ -390,116 +325,6 @@ body {
     font-size: 16px;
 }
 
-/* Program Highlights Section */
-/* Container and Section Styling */
-#program_highlights {
-    text-align: center;
-    padding: 2rem;
-}
-
-#program_highlights h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.modal {
-    z-index: 1050 !important;  /* Set the modal's z-index higher than the backdrop */
-}
-
-.modal-backdrop {
-    z-index: 1040 !important;  /* Set the backdrop's z-index lower than the modal */
-}
-
-
-
-/* Card Flip Effect */
-.boxes {
-    perspective: 1000px;
-}
-
-.card {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 20px 0;
-}
-
-
-.card:hover, .card.rotate {
-    transform: rotateY(0); /* Show front view when hovered or in view */
-}
-
-/* Front and Back Side Styling */
-.front, .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-}
-
-.front {
-    background: #f5f5f5;
-    transform: rotateY(0deg); /* Show on flip */
-}
-
-.back {
-    background: #007bff;
-    color: white;
-    transform: rotateY(180deg); /* Initially hidden */
-}
-
-/* Image and Text Styling */
-.front img {
-    width: 80px;
-    height: auto;
-    margin-bottom: 1rem;
-}
-
-.front p, .back p {
-    font-size: 1rem;
-    text-align: center;
-    padding: 0 0.5rem;
-}
-
-/* Rotate Animation Triggering */
-@keyframes rotateAnimation {
-    from {
-        opacity: 0;
-        transform: rotateY(180deg);
-    }
-    to {
-        opacity: 1;
-        transform: rotateY(0);
-    }
-}
-
-.rotate {
-    animation: rotateAnimation 0.6s ease forwards;
-}
-
-/* Existing In-View Animation */
-@keyframes inViewAnimation {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 /* Specializations Section */
 #specilizations_offered {
@@ -676,268 +501,6 @@ body {
     background-color: #004494;
 }
 
-/* Placements Section Styles */
-.placements {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #ffffff;
-    font-family: Arial, sans-serif;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Title Styling */
-.placements-title {
-    color: #0056b3;
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-/* Metrics Container */
-.placements-metrics {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-/* Individual Metric Styling */
-.metric {
-    text-align: center;
-    position: relative;
-    width: 150px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    word-wrap: break-word; /* Allow text to wrap */
-    word-break: break-word; /* Break long words if necessary */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.metric:hover {
-    transform: translateY(-10px);
-}
-
-/* Loading Circle Styling */
-.loading-circle {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-}
-
-.circle-svg {
-    width: 100px;
-    height: 100px;
-    transform: rotate(-90deg);
-}
-
-.circle-bg {
-    fill: none;
-    stroke: #e6e6e6;
-    stroke-width: 10;
-}
-
-.circle-progress {
-    fill: none;
-    stroke: #007bff;
-    stroke-width: 10;
-    stroke-dasharray: 283;
-    stroke-dashoffset: 283;
-    transition: stroke-dashoffset 1.5s ease;
-}
-
-/* Percentage Value Styling */
-.value {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 18px;
-    font-weight: bold;
-    color: #0056b3;
-}
-
-/* Upward-Facing Loading Bar */
-.bar-container {
-    position: relative;
-    height: 100px;
-    width: 20px;
-    background: #e6e6e6;
-    border-radius: 10px;
-    margin: 20px auto;
-    overflow: hidden;
-}
-
-.loading-bar {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 0;
-    background-color: #007bff;
-    border-radius: 10px;
-    transition: height 1.5s ease;
-}
-
-.loading-bar[data-visible="true"] {
-    height: calc(var(--percent) * 1%);
-}
-
-/* Label Styling */
-.label {
-    font-size: 14px;
-    color: #555;
-    margin-top: 10px;
-    text-align: center; /* Centers the text */
-    word-wrap: break-word; /* Allow the label text to break and wrap */
-    word-break: break-word; /* Force breaking of long words */
-}
-
-/* Graph Container Styling */
-.graph-container {
-    margin-top: 60px;
-    width: 100%;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Graph Styling */
-canvas {
-    width: 100%;
-    height: 250px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* admission process */
-.admission-process {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.steps-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    /* width: 100vh; */
-    overflow: visible;  /* Allow children to overflow */
-}
-
-.progress-line {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 0; /* Start with zero height */
-    background-color: #007bff;
-    transition: height 1s ease; /* Smooth transition for growth */
-    z-index: -1; /* To keep it behind steps */
-}
-
-.step {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    background: #ffffff; /* Light background */
-    padding: 2rem 1.5rem;
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    width: 80%; /* Adjust width as needed */
-    max-width: 600px; /* Limit maximum width */
-    margin: 0 auto; /* Center container */
-    border: 2px solid #e0e0e0; /* Soft border for a polished look */
-}
-
-/* Alternate step positions */
-.step:nth-child(odd) {
-    align-items: flex-end;
-    text-align: right;
-    padding-right: 1rem;
-    margin-right: -50%;
-    position: relative;  /* Added position relative to allow transformations */
-}
-
-.step:nth-child(even) {
-    align-items: flex-start;
-    text-align: left;
-    padding-left: 1rem;
-    margin-left: -50%;
-    position: relative;  /* Added position relative to allow transformations */
-}
-
-.step .icon {
-    font-size: 24px;
-    margin-bottom: 8px;
-}
-
-/* Base class for the animation */
-.slide-in {
-    opacity: 0;
-    transition: transform 1s ease-out, opacity 0.6s ease-out;
-}
-
-/* Slide in from left */
-.slide-in-left {
-    transform: translateX(-100%); /* Starts off-screen to the left */
-}
-
-/* Slide in from right */
-.slide-in-right {
-    transform: translateX(100%); /* Starts off-screen to the right */
-}
-
-/* When the animation class is added, it brings the element to its original position */
-.slide-in-active {
-    transform: translateX(0); /* Reset position */
-    opacity: 1; /* Fully visible */
-}
-
-/*==============================pop effect===========================================*/
-.pop{
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-}
-
-.pop:hover {
-    transform: scale(1.05); /* Slightly enlarge the element */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow for more emphasis */
-}
-
-/*==============================hover effect===========================================*/
-.coolBeans {
-    color: #18272F;
-    position: relative;
-    text-decoration: none;
-}
-
-.coolBeans::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 4px;
-    background-color: #18272F;
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .3s ease-in-out;
-}
-
-.coolBeans:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
-}
 /*==============================Enter effect===========================================*/
 /* Keyframes for the animation */
 @keyframes slideUpEaseOut {

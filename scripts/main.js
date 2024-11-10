@@ -1,45 +1,3 @@
-// Function to check if an element is in the viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
-// Function to animate the graph curve
-function animateGraph() {
-    const ctx = document.getElementById('progressGraph').getContext('2d');
-    const graphData = [0, 25, 45, 60, 80, 95, 100];
-    let currentIndex = 0;
-
-    // Animate the graph
-    function drawGraph() {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); // Clear canvas
-        ctx.beginPath();
-        ctx.moveTo(0, ctx.canvas.height - graphData[0]);
-
-        for (let i = 0; i <= currentIndex; i++) {
-            const x = (i / (graphData.length - 1)) * ctx.canvas.width;
-            const y = ctx.canvas.height - (graphData[i] / 100) * ctx.canvas.height;
-            ctx.lineTo(x, y);
-        }
-
-        ctx.strokeStyle = '#9400d3';
-        ctx.lineWidth = 3;
-        ctx.stroke();
-
-        if (currentIndex < graphData.length - 1) {
-            currentIndex++;
-            setTimeout(drawGraph, 500); // Delay for next frame
-        }
-    }
-
-    drawGraph();
-}
-
 document.addEventListener("DOMContentLoaded", function() {
     // Navbar toggle for mobile view
     const toggleButton = document.querySelector('.navbar-toggle');
@@ -158,14 +116,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-function toggleAnswer(questionElement) {
-    const answer = questionElement.nextElementSibling;
-
-    // Toggle answer visibility and icon change
-    answer.classList.toggle("visible");
-    questionElement.classList.toggle("expanded");
-}
-
 // JavaScript for drag-to-scroll functionality
 const carousel = document.querySelector('.carousel');
 
@@ -219,7 +169,6 @@ window.addEventListener('scroll', () => {
             
             if (rect.top < window.innerHeight / 1.3 && rect.bottom > 0) {
                 // Add active class to steps that are in view
-                step.classList.add('active');
                 // Update the maxHeight based on step visibility within the section
                 maxHeight = Math.max(maxHeight, stepTop - sectionTop);
             } else {
@@ -229,7 +178,7 @@ window.addEventListener('scroll', () => {
         });
 
         // Set the height of the progress line with a limit of the section height
-        progressLine.style.height = `${Math.min(maxHeight, admissionSection.offsetHeight)}px`;
+        progressLine.style.height = `${Math.min(maxHeight, admissionSection.offsetHeight) + 50}px`;
     } else {
         // Reset the progress line if scrolled out of the section
         progressLine.style.height = `0px`;
@@ -278,8 +227,17 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// JavaScript to add 'reached' class to each step
+document.addEventListener('scroll', () => {
+    const steps = document.querySelectorAll('.step');
+    steps.forEach((step, index) => {
+        const stepTop = step.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
 
-
-
+        if (stepTop < windowHeight) {
+            step.classList.add('reached'); // Add the 'reached' class
+        }
+    });
+});
 
 

@@ -1,0 +1,154 @@
+
+/* admission process */
+.admission-process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.steps-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    /* width: 100vh; */
+    overflow: visible;  /* Allow children to overflow */
+}
+
+.progress-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 0; /* Start with zero height */
+    background-color: yellow;
+    transition: height 1s ease; /* Smooth transition for growth */
+    z-index: -1; /* To keep it behind steps */
+}
+
+.step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background: #ffffff; /* Light background */
+    padding: 2rem 1.5rem;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Limit maximum width */
+    margin: 0 auto; /* Center container */
+    border: 2px solid #e0e0e0; /* Soft border for a polished look */
+}
+
+/* Base style for the yellow circle */
+.slide-in-left::before {
+    content: "";
+    position: absolute;
+    left: -55px; /* Position to the left of the step container */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 50%;
+    transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+/* Base style for the yellow circle */
+.slide-in-right::before {
+    content: "";
+    position: absolute;
+    left: 190px; /* Position to the left of the step container */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 50%;
+    transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+/* Circle grows when the progress line reaches it */
+.slide-in-left.reached::before {
+    width: 24px; /* New size for the circle */
+    height: 24px;
+    transform: translateY(-50%) scale(1.2); /* Slightly larger size */
+}
+
+/* Circle grows when the progress line reaches it */
+.slide-in-right.reached::before {
+    width: 24px; /* New size for the circle */
+    height: 24px;
+    transform: translateY(-50%) scale(1.2); /* Slightly larger size */
+}
+
+/* Progress line animation */
+.progress-line {
+    position: absolute;
+    padding: black;
+    padding: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 100%; /* Full height to make it look like it reaches each step */
+    background-color: yellow;
+    z-index: -1;
+    transition: height 1s ease; /* Smooth transition */
+}
+
+/* Alternate step positions */
+.step:nth-child(odd) {
+    align-items: flex-end;
+    text-align: right;
+    padding-right: 1rem;
+    margin-right: -50%;
+    position: relative;  /* Added position relative to allow transformations */
+}
+
+.step:nth-child(even) {
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 1rem;
+    margin-left: -50%;
+    position: relative;  /* Added position relative to allow transformations */
+}
+
+.step .icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+/* Base class for the animation */
+.slide-in {
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 0.6s ease-out;
+}
+
+/* Slide in from left */
+.slide-in-left {
+    transform: translateX(-100%); /* Starts off-screen to the left */
+}
+
+/* Slide in from right */
+.slide-in-right {
+    transform: translateX(100%); /* Starts off-screen to the right */
+}
+
+/* When the animation class is added, it brings the element to its original position */
+.slide-in-active {
+    transform: translateX(0); /* Reset position */
+    opacity: 1; /* Fully visible */
+}
+
+/*==============================pop effect===========================================*/
+.pop{
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.pop:hover {
+    transform: scale(1.05); /* Slightly enlarge the element */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow for more emphasis */
+}
