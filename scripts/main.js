@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-
     // Universal Intersection Observer for animation on view
     const observedElements = [
         ...document.querySelectorAll('.slideUpFastEaseOut'),  // Fast slide-up ease-out animation elements
@@ -91,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     : `${Math.round(target)}${suffix}`;
             }
         };
-
         updateCounter();
     };
 
@@ -148,10 +146,11 @@ carousel.addEventListener('mousemove', (e) => {
     carousel.scrollLeft = scrollLeft - walk;
 });
 
+const progressLine = document.querySelector('.progress-line');
+
 // JavaScript for window addEventListener
 window.addEventListener('scroll', () => {
     const steps = document.querySelectorAll('.step');
-    const progressLine = document.querySelector('.progress-line');
     const admissionSection = document.querySelector('#admission_process');
 
     // Calculate the top and bottom positions of the admission section
@@ -178,7 +177,7 @@ window.addEventListener('scroll', () => {
         });
 
         // Set the height of the progress line with a limit of the section height
-        progressLine.style.height = `${Math.min(maxHeight, admissionSection.offsetHeight) + 50}px`;
+        progressLine.style.height = `${Math.min(maxHeight, admissionSection.offsetHeight)}px`;
     } else {
         // Reset the progress line if scrolled out of the section
         progressLine.style.height = `0px`;
@@ -197,7 +196,6 @@ window.addEventListener('scroll', () => {
             item.classList.remove('active');
         }
     });
-    
 });
 
 // Scroll event listener for metrics and graph
@@ -219,25 +217,20 @@ window.addEventListener('scroll', () => {
             metric.querySelector('.loading-bar').removeAttribute("data-visible");
         }
     });
-
-    // Animate the graph if it's in the viewport
-    const graph = document.querySelector('.graph-container canvas');
-    if (isInViewport(graph)) {
-        animateGraph();
-    }
 });
 
 // JavaScript to add 'reached' class to each step
 document.addEventListener('scroll', () => {
     const steps = document.querySelectorAll('.step');
     steps.forEach((step, index) => {
-        const stepTop = step.getBoundingClientRect().top;
+        const stepMid = (step.getBoundingClientRect().top + step.getBoundingClientRect().bottom)/2;
         const windowHeight = window.innerHeight;
-
-        if (stepTop < windowHeight) {
+        const stepBottom = progressLine.getBoundingClientRect().bottom;
+        if (stepMid < stepBottom + 5) {
             step.classList.add('reached'); // Add the 'reached' class
+        }else{
+            step.classList.remove('reached'); // Remove the 'reached' class
         }
     });
 });
-
 

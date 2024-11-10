@@ -12,6 +12,7 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    margin-top: 30px;
     /* width: 100vh; */
     overflow: visible;  /* Allow children to overflow */
 }
@@ -34,11 +35,11 @@
     align-items: center;
     gap: 2rem;
     background: #ffffff; /* Light background */
-    padding: 2rem 1.5rem;
+    padding: 1rem 1rem;
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    width: 80%; /* Adjust width as needed */
-    max-width: 600px; /* Limit maximum width */
+    min-width: 200px; /* Adjust width as needed */
+    max-width: 80%; /* Limit maximum width */
     margin: 0 auto; /* Center container */
     border: 2px solid #e0e0e0; /* Soft border for a polished look */
 }
@@ -47,42 +48,64 @@
 .slide-in-left::before {
     content: "";
     position: absolute;
+    text-align: center;
+    font-weight: 300;
+    font-size: large;
     left: -115px; /* Position to the left of the step container */
     top: 50%;
     transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
+    width: 0px;
+    height: 0px;
     background-color: yellow;
     border-radius: 50%;
+    transform: rotate(45deg);
     transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+.step-top{
+    background-color: yellow;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.step-top h3{
+    font-weight: 500;
+    font-size: 24px;
 }
 
 /* Base style for the yellow circle */
 .slide-in-right::before {
     content: "";
+    text-align: center;
+    font-weight: 300;
+    font-size: large;
     position: absolute;
-    left: 250px; /* Position to the left of the step container */
+    left: 275px; /* Position to the left of the step container */
     top: 50%;
     transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
+    width: 0px;
+    height: 0px;
     background-color: yellow;
     border-radius: 50%;
-    transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+    transform: rotate(45deg);
+    transition: padding 1s ease, transform 0.5s ease, width 0.5s ease, height 0.5s ease;
 }
 
 /* Circle grows when the progress line reaches it */
 .slide-in-left.reached::before {
-    width: 24px; /* New size for the circle */
-    height: 24px;
-    transform: translateY(-50%) scale(1.2); /* Slightly larger size */
+    content: "\2714";
+    width: 40px; /* New size for the circle */
+    height: 40px;
+    transform:rotate(0deg) translateY(-50%) scale(1.2); /* Slightly larger size */
 }
 
 /* Circle grows when the progress line reaches it */
 .slide-in-right.reached::before {
-    width: 24px; /* New size for the circle */
-    height: 24px;
-    transform: translateY(-50%) scale(1.2); /* Slightly larger size */
+    content: "\2714";
+    width: 40px; /* New size for the circle */
+    height: 40px;
+    transform: translateY(-50%) rotate(0deg) scale(1.2); /* Slightly larger size */
 }
 
 /* Progress line animation */
