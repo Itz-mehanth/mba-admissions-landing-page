@@ -38,7 +38,6 @@
     padding: 1rem 1rem;
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    min-width: 200px; /* Adjust width as needed */
     max-width: 80%; /* Limit maximum width */
     margin: 0 auto; /* Center container */
     border: 2px solid #e0e0e0; /* Soft border for a polished look */
@@ -51,7 +50,7 @@
     text-align: center;
     font-weight: 300;
     font-size: large;
-    left: -115px; /* Position to the left of the step container */
+    left: -70px; /* Position to the left of the step container */
     top: 50%;
     transform: translateY(-50%);
     width: 0px;
@@ -81,7 +80,7 @@
     font-weight: 300;
     font-size: large;
     position: absolute;
-    left: 275px; /* Position to the left of the step container */
+    left: 185px; /* Position to the left of the step container */
     top: 50%;
     transform: translateY(-50%);
     width: 0px;
@@ -111,8 +110,6 @@
 /* Progress line animation */
 .progress-line {
     position: absolute;
-    padding: black;
-    padding: 5px;
     left: 50%;
     transform: translateX(-50%);
     width: 8px;
@@ -127,7 +124,7 @@
     align-items: flex-end;
     text-align: right;
     padding-right: 1rem;
-    margin-right: -80%;
+    margin-right: -50%;
     position: relative;  /* Added position relative to allow transformations */
 }
 
@@ -135,7 +132,7 @@
     align-items: flex-start;
     text-align: left;
     padding-left: 1rem;
-    margin-left: -80%;
+    margin-left: -40%;
     position: relative;  /* Added position relative to allow transformations */
 }
 
